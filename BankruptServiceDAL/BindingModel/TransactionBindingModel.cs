@@ -1,13 +1,13 @@
-﻿using System;
+﻿using BankruptModel;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankruptModel
+namespace BankruptServiceDAL.BindingModel
 {
-    public class Transaction
+    public class TransactionBindingModel
     {
         public int Id { get; set; }
 
@@ -16,10 +16,5 @@ namespace BankruptModel
         public DateTime DateCreate { get; set; }
 
         public DateTime? DateImplement { get; set; }
-
-        public TransactionStatus Status { get; set; }
-
-        [ForeignKey("TransactionId")]
-        public virtual List<CurrencyTransaction> CurrencyTransactions { get; set; }
     }
 }
