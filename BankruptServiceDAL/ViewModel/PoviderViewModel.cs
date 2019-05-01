@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankruptServiceDAL.ViewModel
 {
-    public class PoviderViewModel
+    public class ProviderViewModel
     {
         public int Id { get; set; }
 

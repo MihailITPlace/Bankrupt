@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A8B4444C-7AF6-4ED5-853D-94FB825DAEE9}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BankruptServiceDAL</RootNamespace>
-    <AssemblyName>BankruptServiceDAL</AssemblyName>
+    <ProjectGuid>{48E60D8D-0C58-4DD0-A45E-4BCA7AE3D665}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,9 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,30 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingModel\CurrencyBindingModel.cs" />
-    <Compile Include="BindingModel\CurrencyRepositoryBindingModel.cs" />
-    <Compile Include="BindingModel\CurrencyTransactionBindingModel.cs" />
-    <Compile Include="BindingModel\ProviderBindingModel.cs" />
-    <Compile Include="BindingModel\ReportBindingModel.cs" />
-    <Compile Include="BindingModel\RepositoryBindingModel.cs" />
-    <Compile Include="BindingModel\TransactionBindingModel.cs" />
-    <Compile Include="Interfaces\ICurrencyService.cs" />
-    <Compile Include="Interfaces\IProviderService.cs" />
-    <Compile Include="Interfaces\IReportService.cs" />
-    <Compile Include="Interfaces\IRepositoryService.cs" />
-    <Compile Include="Interfaces\ITransactionService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\CurrencyRepositoryViewModel.cs" />
-    <Compile Include="ViewModel\CurrencyTransactionViewModel.cs" />
-    <Compile Include="ViewModel\CurrencyViewModel.cs" />
-    <Compile Include="ViewModel\PoviderViewModel.cs" />
-    <Compile Include="ViewModel\RepositoryViewModel.cs" />
-    <Compile Include="ViewModel\TransactionViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BankruptModel\BankruptModel.csproj">
       <Project>{FF445D29-2DF6-4760-A176-F94AEECD494D}</Project>
       <Name>BankruptModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BankruptServiceImplementDataBase\BankruptServiceImplementDataBase.csproj">
+      <Project>{D28F76E7-BFD9-40D2-A058-DE4602AE1AE3}</Project>
+      <Name>BankruptServiceImplementDataBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

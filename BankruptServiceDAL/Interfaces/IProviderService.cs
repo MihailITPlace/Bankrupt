@@ -10,9 +10,9 @@ namespace BankruptServiceDAL.Interfaces
 {
     public interface IProviderService
     {
-        List<PoviderViewModel> GetList();
+        List<ProviderViewModel> GetList();
 
-        PoviderViewModel GetElement(int id);
+        ProviderViewModel GetElement(int id);
 
         void AddElement(ProviderBindingModel model);
 
